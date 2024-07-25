@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (user) {
             localStorage.setItem('user', JSON.stringify(user));
-            window.location.href = 'dashboard.html';
+            window.location.href = '../docs/dashboard.html';
         } else {
             errorMessage.classList.remove('hidden');
         }
