@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workflow - ColabNet</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/auth.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img class="logoImg" src="../media/ColabNet_Logo_RMVBG.png">
+            <h1 class="site-title">PKMT x 3D Service</h1>
+        </div>
+    </header>
+
+    <nav class="sidebar">
+        <ul id="navList">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="produkte.html">Produkte</a></li>
+            <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
+            <li><a href="ansprechpartner.html">Ansprechpartner</a></li>
+            <li><a href="workflow.html">Workflow</a></li>
+            <li class="admin-only"><a href="admin.html">Adminbereich</a></li>
+            <li><a href="user.html">Benutzerprofil</a></li>
+            <li><a href="#" id="logoutButton">Logout</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="workflow" class="content">
+            <h1>Workflow von <span id="username"></span></h1>
+            <div class="tabs">
+                <button class="tab-button active" data-tab="incoming">Eingehende Anfragen</button>
+                <button class="tab-button" data-tab="outgoing">Ausgehende Anfragen</button>
+                <button class="tab-button" data-tab="deleted">Gelöschte Anfragen</button>
+            </div>
+            <div id="incoming" class="tab-content active">
+                <h2>Eingehende Anfragen</h2>
+                <table id="incomingTable">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Anfragende Person</th>
+                            <th>Typ</th>
+                            <th>Name</th>
+                            <th>Unternehmen</th>
+                            <th>Status</th>
+                            <th>Aktionen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Eingehende Anfragen werden hier dynamisch hinzugefügt -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="outgoing" class="tab-content">
+                <h2>Ausgehende Anfragen</h2>
+                <table id="outgoingTable">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Empfangendes Unternehmen</th>
+                            <th>Typ</th>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>Aktionen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Ausgehende Anfragen werden hier dynamisch hinzugefügt -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="deleted" class="tab-content">
+                <h2>Gelöschte Anfragen</h2>
+                <table id="deletedTable">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Anfragende Person</th>
+                            <th>Typ</th>
+                            <th>Name</th>
+                            <th>Unternehmen</th>
+                            <th>Status</th>
+                            <th>Aktionen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Gelöschte Anfragen werden hier dynamisch hinzugefügt -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div id="detailPopup" class="popup hidden">
+            <div class="popup-content">
+                <span class="close-button" id="detailCloseButton">&times;</span>
+                <h2>Detailansicht der Anfrage</h2>
+                <p id="detailProduct"></p>
+                <p id="detailRequester"></p>
+                <p id="detailTimestamp"></p>
+                <p id="detailMessage"></p>
+                <label for="statusSelect">Status ändern:</label>
+                <select id="statusSelect">
+                    <option value="Unbearbeitet">Unbearbeitet</option>
+                    <option value="In Bearbeitung">In Bearbeitung</option>
+                    <option value="Abgeschlossen">Abgeschlossen</option>
+                </select>
+                <button id="updateStatusButton">Status aktualisieren</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="#about">Über uns</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+            <li><a href="#privacy">Datenschutz</a></li>
+            <li><a href="#terms">Nutzungsbedingungen</a></li>
+        </ul>
+    </footer>
+
+    <script src="../js/workflow.js"></script>
+</body>
+</html>

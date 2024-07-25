@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColabNet Produkte</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/auth.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img class="logoImg" src="../media/ColabNet_Logo_RMVBG.png">
+            <h1 class="site-title">PKMT x 3D Service</h1>
+        </div>
+    </header>
+
+    <nav class="sidebar">
+        <ul id="navList">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="produkte.html">Produkte</a></li>
+            <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
+            <li><a href="ansprechpartner.html">Ansprechpartner</a></li>
+            <li><a href="workflow.html">Workflow</a></li>
+            <li class="admin-only"><a href="admin.html">Adminbereich</a></li>
+            <li><a href="user.html">Benutzerprofil</a></li>
+            <li><a href="#" id="logoutButton">Logout</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="products" class="content">
+            <h1>Produkte</h1>
+            <button id="addProductButton">Produkt hinzufügen</button>
+            <div class="search-and-filter">
+                <input type="text" id="searchBar" placeholder="Produkte suchen...">
+                <select id="categoryFilter">
+                    <option value="all">Alle Kategorien</option>
+                    <option value="3D Koordinatenmessmaschine">3D Koordinatenmessmaschine</option>
+                    <option value="2D Koordinatenmessgerät">2D Koordinatenmessgerät</option>
+                    <option value="1D Koordinatenmessgerät">1D Koordinatenmessgerät</option>
+                    <option value="Ersatzteil">Ersatzteil</option>
+                    <option value="Zubehör">Zubehör</option>
+                    <option value="Sonstiges">Sonstiges</option>
+                </select>
+            </div>
+            
+            <div id="productList" class="cards-container">
+                <!-- Produktkarten werden hier dynamisch hinzugefügt -->
+            </div>
+        </section>
+    </main>
+
+    <div id="productPopup" class="popup hidden">
+        <div class="popup-content">
+            <span class="close-button">&times;</span>
+            <h2>Neues Produkt hinzufügen</h2>
+            <form id="newProductForm" enctype="multipart/form-data">
+                <label for="productName">Produktname:</label>
+                <input type="text" id="productName" name="productName" required>
+                <label for="productDescription">Produktbeschreibung:</label>
+                <textarea id="productDescription" name="productDescription" required></textarea>
+                <label for="productPrice">Preis:</label>
+                <input type="number" id="productPrice" name="productPrice" required>
+                <label for="productCategory">Kategorie:</label>
+                <select id="productCategory" name="productCategory" required>
+                    <option value="3D Koordinatenmessmaschine">3D Koordinatenmessmaschine</option>
+                    <option value="2D Koordinatenmessgerät">2D Koordinatenmessgerät</option>
+                    <option value="1D Koordinatenmessgerät">1D Koordinatenmessgerät</option>
+                    <option value="Ersatzteil">Ersatzteil</option>
+                    <option value="Zubehör">Zubehör</option>
+                    <option value="Sonstiges">Sonstiges</option>
+                </select>
+                <label for="productImage">Produktbild:</label>
+                <input type="file" id="productImage" name="productImage" accept="image/*" required>
+                <label for="productCreator">Ersteller:</label>
+                <input type="text" id="productCreator" name="productCreator" required disabled>
+                <button type="submit">Hinzufügen</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="detailPopup" class="popup hidden">
+        <div class="popup-content">
+            <span class="close-button" id="detailCloseButton">&times;</span>
+            <h2 id="detailProductName">Produktname</h2>
+            <img id="detailProductImage" src="" alt="Produktbild">
+            <p id="detailProductDescription">Produktbeschreibung</p>
+            <p id="detailProductPrice">Preis</p>
+            <p id="detailProductCreator" class="hidden"></p>
+            <button id="inquireButton">Anfragen</button>
+        </div>
+    </div>
+
+    <div id="inquirePopup" class="popup hidden">
+        <div class="popup-content">
+            <span class="close-button" id="inquireCloseButton">&times;</span>
+            <h2>Nachricht senden</h2>
+            <form id="inquireForm">
+                <label for="inquireMessage">Nachricht:</label>
+                <textarea id="inquireMessage" name="inquireMessage" required></textarea>
+                <button type="submit">Senden</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <ul>
+            <li><a href="#about">Über uns</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+            <li><a href="#privacy">Datenschutz</a></li>
+            <li><a href="#terms">Nutzungsbedingungen</a></li>
+        </ul>
+    </footer>
+
+    <script src="../js/scripts.js"></script>
+</body>
+</html>

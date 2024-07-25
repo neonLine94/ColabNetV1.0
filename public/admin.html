@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - ColabNet</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/auth.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img class="logoImg" src="../media/ColabNet_Logo_RMVBG.png">
+            <h1 class="site-title">PKMT x 3D Service</h1>
+        </div>
+    </header>
+
+    <nav class="sidebar">
+        <ul id="navList">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="produkte.html">Produkte</a></li>
+            <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
+            <li><a href="ansprechpartner.html">Ansprechpartner</a></li>
+            <li><a href="workflow.html">Workflow</a></li>
+            <li class="admin-only"><a href="admin.html">Adminbereich</a></li>
+            <li><a href="user.html">Benutzerprofil</a></li>
+            <li><a href="#" id="logoutButton">Logout</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="admin" class="content">
+            <h1>Adminbereich</h1>
+            <h2>Neuen Benutzer erstellen</h2>
+            <form id="newUserForm">
+                <label for="newUsername">Benutzername:</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+                <label for="newPassword">Passwort:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+                <label for="newRole">Rolle:</label>
+                <select id="newRole" name="newRole" required>
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                </select>
+                <label for="newCompany">Unternehmen:</label>
+                <input type="text" id="newCompany" name="newCompany" required>
+                <button type="submit">Benutzer erstellen</button>
+            </form>
+            <p id="userCreatedMessage" class="hidden">Benutzer erfolgreich erstellt!</p>
+
+            <h2>Benutzerübersicht</h2>
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>Benutzername</th>
+                        <th>Rolle</th>
+                        <th>Unternehmen</th>
+                        <th>Aktionen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Benutzer werden hier dynamisch hinzugefügt -->
+                </tbody>
+            </table>
+        </section>
+
+        <div id="editUserPopup" class="popup hidden">
+            <div class="popup-content">
+                <span class="close-button" id="editCloseButton">&times;</span>
+                <h2>Benutzer bearbeiten</h2>
+                <form id="editUserForm">
+                    <input type="hidden" id="editUsername" name="editUsername">
+                    <label for="editPassword">Neues Passwort:</label>
+                    <input type="password" id="editPassword" name="editPassword">
+                    <label for="editRole">Rolle:</label>
+                    <select id="editRole" name="editRole" required>
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                    </select>
+                    <label for="editCompany">Unternehmen:</label>
+                    <input type="text" id="editCompany" name="editCompany" required>
+                    <button type="submit">Speichern</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="#about">Über uns</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+            <li><a href="#privacy">Datenschutz</a></li>
+            <li><a href="#terms">Nutzungsbedingungen</a></li>
+        </ul>
+    </footer>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>

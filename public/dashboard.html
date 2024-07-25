@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColabNet Dashboard</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/auth.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img class="logoImg" src="../media/ColabNet_Logo_RMVBG.png">
+            <h1 class="site-title">PKMT x 3D Service</h1>
+        </div>
+    </header>
+
+    <nav class="sidebar">
+        <ul id="navList">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="produkte.html">Produkte</a></li>
+            <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
+            <li><a href="ansprechpartner.html">Ansprechpartner</a></li>
+            <li><a href="workflow.html">Workflow</a></li>
+            <li class="admin-only"><a href="admin.html">Adminbereich</a></li>
+            <li><a href="user.html">Benutzerprofil</a></li>
+            <li><a href="#" id="logoutButton">Logout</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="dashboard" class="content">
+            <h1>Willkommen auf ColabNet, <span id="username"></span>!</h1>
+            <div id="adminSection" class="admin-only hidden">
+                <h2>Adminbereich</h2>
+                <p>Hier können Sie administrative Aufgaben durchführen.</p>
+                <!-- Weitere Admin-spezifische Inhalte -->
+            </div>
+                <!-- <div id="unbearbeiteteAnfragen">
+                <h2>Unbearbeitete Anfragen im Workflow: <span id="unbearbeiteteAnfragenCount">0</span></h2> 
+            </div> -->
+            <div class="tiles-container">
+                <div class="tile">
+                    <a href="produkte.html">
+                        <h2>Produkte</h2>
+                    </a>
+                </div>
+                <div class="tile">
+                    <a href="dienstleistungen.html">
+                        <h2>Dienstleistungen</h2>
+                    </a>
+                </div>
+                <div class="tile">
+                    <a href="ansprechpartner.html">
+                        <h2>Ansprechpartner</h2>
+                    </a>
+                </div>
+                <div class="tile">
+                    <a href="workflow.html">
+                        <h2>Workflow</h2>
+                    </a>
+                </div>
+                <div class="tile admin-only hidden">
+                    <a href="admin.html">
+                        <h2>Adminbereich</h2>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="#about">Über uns</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+            <li><a href="#privacy">Datenschutz</a></li>
+            <li><a href="#terms">Nutzungsbedingungen</a></li>
+        </ul>
+        <img src="../media/Logo Phönix.png" alt="Phönix Logo" id="pkmtLogo" class="footerLogo">
+        <img src="../media/logo-3dservice.png" alt="3D Service Logo" id="3dServiceLogo" class="footerLogo">
+    </footer>
+
+    <script src="../src/dashboard.js></script>
+</body>
+</html>
